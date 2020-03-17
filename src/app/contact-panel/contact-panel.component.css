@@ -1,0 +1,83 @@
+.wrapper {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.image--cover {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  margin: 20px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center right;
+  object-position: center right;
+  border: 2px solid;
+  border-color: white;
+  background-color: var(--spectra-green);
+  color: white;
+  line-height: 11em;
+}
+
+.mc-btn-action {
+  position: absolute;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  top: 8em;
+  left: 150px;
+  line-height: 3em;
+  text-align: center;
+  background-color: var(--spectra-green);
+  color: #fff;
+  cursor: pointer;
+  z-index: 0;
+  border: 2px solid;
+  border-color: white;
+}
+
+.btn{
+  margin-left: 292px;
+}
+
+
+.mc-btn-action i {
+  color: #fff;
+}
+
+.wrapper .profile-name {
+  color: white;
+}
+
+.wrapper .profile-phone {
+  color: var(--spectra-green);
+}
+
+.wrapper .contact-details {
+  padding-left: 0.5em;
+  border-bottom: 2px solid;
+  border-color: var(--spectra-green);
+}
+
+.wrapper .expanded-details{
+  padding-top: 1em;
+}
+
+.wrapper .expanded-details .row-even,
+.wrapper .expanded-details .row-odd{
+  padding: 0.5em;
+}
+
+.wrapper .expanded-details .row-even {
+  background-color: var(--spectra-dark-grey);
+}
+
+.wrapper .expanded-details .detail-title {
+  color: var(--spectra-green);
+}
+
+.wrapper .expanded-details .detail-detail{
+  color: white;
+}

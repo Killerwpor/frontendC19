@@ -1,0 +1,28 @@
+<div
+  class="w-100"
+  style="height: 100vh; background-color: var(--spectra-grey);"
+>
+  <div class="container h-100 p-0">
+    <div class="row h-10 m-0">
+        <div class="col-lg-12 my-auto text-center">
+            <h3 class="tex">Seleccione una empresa</h3>
+        </div>
+    </div>
+    <div class="row h-90 m-0" style="overflow-y: auto;">
+      <div class="col-lg-12 my-auto">
+        <div class="row" *ngFor="let item of lista">
+          
+          
+         
+                <div class="col-lg-4 my-auto text-center">
+                <h6 class="spectra-link">
+                  <fa-icon [icon]="dot"></fa-icon><a (click)="companySelected(item)" class="sidebar-brand d-flex align-items-center justify-content-center spectra-link tex" >{{item}}</a>
+                </h6>
+              </div>
+            </div>
+           
+         
+        </div>
+      </div>
+    </div>
+  </div>

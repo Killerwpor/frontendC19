@@ -1,0 +1,32 @@
+.btn-lg {
+  background-color: var(--spectra-green);
+  border: 3px solid;
+  border-color: white;
+  border-radius: 3em;
+  color: white;
+  font-size: 0.8em;
+}
+
+input {
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 3em;
+  color: var(--spectra-green);
+  background-color: var(--spectra-dark-grey);
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-left: 0px solid;
+  border-right: 3px solid;
+  border-color: var(--spectra-green);
+}
+
+.input-group-prepend span {
+  border-top-left-radius: 3em;
+  border-bottom-left-radius: 3em;
+  color: var(--spectra-green);
+  background-color: var(--spectra-dark-grey);
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-right: 0px solid;
+  border-color: var(--spectra-green);
+}

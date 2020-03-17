@@ -1,0 +1,48 @@
+.simulator-list {
+  border-radius: 2em;
+  background-color: var(--spectra-dark-grey);
+  min-height: 36em;
+}
+
+.simulator-list .row-simulator {
+  height: 5em;
+  margin-top: 2em;
+}
+
+.simulator-list .row-simulator .default--cover {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  border: 2px solid;
+  border-color: white;
+  background-color: var(--spectra-green);
+  color: white;
+  line-height: 4.25em;
+}
+
+.simulator-list .row-simulator .default--cover i {
+  font-size: 2em;
+}
+
+.simulator-list .row-simulator h5{
+    font-family: 'tex';
+    color: var(--spectra-green);
+}
+
+.container-tab {
+  height: 6em;
+}
+
+.container-tab .tab {
+  width: 15em;
+  position: relative;
+  left: 3em;
+  top: 50%;
+  background-color: var(--spectra-green);
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+}

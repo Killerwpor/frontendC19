@@ -1,0 +1,49 @@
+.row-add {
+  min-height: 94vh;
+}
+
+.btn-skew {
+    border: 1px solid;
+    border-color: var(--spectra-green);
+    font-family: "tex";
+    transform: skew(-21deg);
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 2em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 1.5em;
+    max-height: 3em;
+    min-width: 7em;
+    background-color: var(--spectra-dark-grey);
+    color: white;
+  }
+  
+  .btn-skew:hover {
+    background-color: var(--spectra-green);
+  }
+  
+  .btn-skew h5 {
+    transform: skew(21deg);
+  }
+  
+  .btn-skew-inv {
+    font-family: "tex";
+    transform: skew(-21deg);
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 2em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 1.5em;
+    max-height: 3em;
+    min-width: 7em;
+    background-color: var(--spectra-green);
+    color: white;
+  }
+  
+  .btn-skew-inv h5 {
+    transform: skew(21deg);
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .responsive-filler {
+      margin: 0.5em;
+    }
+  }

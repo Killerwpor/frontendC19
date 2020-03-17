@@ -1,0 +1,47 @@
+.container-list {
+  min-height: 35em;
+  width: 100%;
+  border: 2px solid var(--spectra-green);
+  border-radius: 1em;
+  background-color: var(--spectra-dark-grey);
+}
+
+.row {
+  min-height: 35em;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+}
+
+.col-checks {
+  max-height: 36em;
+  /* overflow-y: auto; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container-object {
+  height: 70px;
+  padding-top: 20px;
+}
+
+.container-checkmark {
+  height: 70px;
+  padding-top: 13.5px;
+}
+
+a {
+  text-align: center;
+  font-family: "tex";
+  color: var(--spectra-green);
+}
+
+.nav-link.active {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: white;
+  background-color: var(--spectra-green);
+  border: 2px solid white;
+  border-radius: 3em;
+}

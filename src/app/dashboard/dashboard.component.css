@@ -1,0 +1,128 @@
+@import "animations.css";
+
+.container-all {
+  background-color: var(--spectra-grey);
+}
+
+.row-nav {
+  height: 6%;
+}
+
+.row-dash {
+  height: 94%;
+  background-color: var(--spectra-grey);
+}
+
+.row-dash-upper {
+  height: 65%;
+}
+
+.row-dash-upper .col-contacts {
+  border-right: 2px solid;
+  border-color: var(--spectra-green);
+}
+
+.row-dash-lower {
+  height: 35%;
+}
+
+.row-add {
+  min-height: 94vh;
+}
+
+.row-add div {
+  background-color: var(--spectra-grey);
+}
+
+.row-sidebar-simulators {
+  overflow: auto;
+}
+
+.row-sidebar-contacts {
+  overflow: auto;
+}
+
+/*Skew button*/
+.btn-skew {
+  border: 1px solid;
+  border-color: var(--spectra-green);
+  font-family: "tex";
+  transform: skew(-21deg);
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 2em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 1.5em;
+  max-height: 3em;
+  min-width: 7em;
+  background-color: var(--spectra-dark-grey);
+  color: white;
+}
+
+.btn-skew:hover {
+  background-color: var(--spectra-green);
+}
+
+.btn-skew h5 {
+  transform: skew(21deg);
+}
+
+.btn-skew-inv {
+  font-family: "tex";
+  transform: skew(-21deg);
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 2em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 1.5em;
+  max-height: 3em;
+  min-width: 7em;
+  background-color: var(--spectra-green);
+  color: white;
+}
+
+.btn-skew-inv h5 {
+  transform: skew(21deg);
+}
+
+.noUserIcon {
+  font-size: 5em;
+  font-family: "tex";
+  color: var(--spectra-green);
+  opacity: 0.3;
+}
+
+.noUserText {
+  font-size: 2em;
+  font-family: "tex";
+  color: var(--spectra-green);
+  opacity: 0.3;
+}
+
+
+.companySelectedText {
+  font-size: 2em;
+  font-family: "tex";
+  color: var(--spectra-green);
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-weight: bold;
+}
+
+.h-95 {
+  height: 95% !important;
+}
+
+.bg-gradient-dark-grey {
+  background-color: var(--spectra-dark-grey);
+  min-width: 16.5%;
+}
+
+.nav-item:hover{
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .responsive-filler {
+    margin: 0.5em;
+  }
+}

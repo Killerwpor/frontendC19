@@ -1,0 +1,135 @@
+
+<div class="row w-100 h-100 mr-0 ml-0">
+  <div class="col-lg-12 p-0 my-auto">
+    <ul class="nav nav-tabs spectra-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link tex active btn tab" id="home-tab" data-toggle="tab" href="#filters" role="tab"
+          aria-controls="filters" aria-selected="true">Filtros</a>
+      </li>
+     <!-- <li class="nav-item">
+        <a class="nav-link tex btn tab" id="messages-tab" data-toggle="tab" href="#messages" role="tab"
+          aria-controls="messages" aria-selected="false">Mensajes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link tex btn tab" id="contact-tab" data-toggle="tab" href="#observations" role="tab"
+          aria-controls="observations" aria-selected="false">Observaciones</a>
+      </li>-->
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!-- panel de filtros -->
+      <div class="tab-pane fade show active" id="filters" role="tabpanel" aria-labelledby="filters-tab">
+        <div class="w-100 form-control message-div">
+          <div class="row w-100 p-0 m-0 h-100">
+            <div class="col-lg-5 my-auto">
+              <div>
+                <div class="m-3">
+                  <label class="radio" *ngIf="userType == 'student'" (click)="changeTab('date');">
+                    <input type="radio" name="r" value="4" checked>
+                    <span class="tex">Métricas por fecha</span>
+                  </label>
+                  <label class="radio" *ngIf="userType == 'student'" (click)="changeTab('user');">
+                    <input type="radio" name="r" value="1">
+                    <span class="tex">Métricas por usuario</span>
+                  </label>
+                  <label class="radio" *ngIf="userType == 'supervisor'" (click)="changeTab('supervisor');">
+                    <input type="radio" name="r" value="2">
+                    <span class="tex">Métricas por supervisor</span>
+                  </label>
+                  <label class="radio"  *ngIf="userType == 'student'" (click)="changeTab('company');">
+                    <input type="radio" name="r" value="3">
+                    <span class="tex">Métricas por empresa</span>
+                  </label>
+                </div>
+              </div>
+              <ng-container  *ngIf="toggle == 'date' && userType=='student'">
+                <label class="tex" for="dateofbirth">Fecha:</label>
+                <input id="metricDate" type="date" ([ngModel]) ="dt" (change)="changeDate($event)" class="tex">              
+              </ng-container>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="d-flex flex-column h-100">
+                <div class="d-flex flex-column flex-grow-1">
+                  <div class="h-100 flex-grow-1 m-3 pillList">
+                    <div class="d-flex flex-column p-3" *ngIf="allMetrics != null">
+
+                      <ng-container *ngFor="let bar of allMetrics.barCharts; let i = index">
+                        <div class="pill" (click)="loadMetric('bar', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate" style="display: block;">
+                              <h6 class="tex pt-1">{{bar.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+
+                      <ng-container *ngFor="let doughnut of allMetrics.doughnutChart; let i = index">
+                        <div class="pill" (click)="loadMetric('doughnut', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate">
+                              <h6 class="tex pt-1">{{doughnut.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+
+                      <ng-container *ngFor="let radar of allMetrics.radarCharts; let i = index">
+                        <div class="pill" (click)="loadMetric('radar', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate">
+                              <h6 class="tex pt-1">{{radar.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+
+                      <ng-container *ngFor="let pie of allMetrics.pieCharts; let i = index">
+                        <div class="pill"(click)="loadMetric('pie', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate">
+                              <h6 class="tex pt-1">{{pie.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+
+                      <ng-container *ngFor="let line of allMetrics.lineCharts; let i = index">
+                        <div class="pill" (click)="loadMetric('line', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate">
+                              <h6 class="tex pt-1">{{line.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+
+                      <ng-container *ngFor="let check of allMetrics.checkCharts; let i = index">
+                        <div class="pill" (click)="loadMetric('check', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate">
+                              <h6 class="tex pt-1">{{check.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+
+                      <ng-container *ngFor="let sum of allMetrics.summaryCharts; let i = index">
+                        <div class="pill" (click)="loadMetric('summary', i)">
+                          <div class="row">
+                            <div class="col-lg-12 my-auto text-center text-truncate">
+                              <h6 class="tex pt-1">{{sum.chartName}}</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

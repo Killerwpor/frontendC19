@@ -1,0 +1,62 @@
+<div class="container-fluid"
+  style="background-color: var(--spectra-grey); border-left: 2px solid var(--spectra-green);">
+  <div class="row">
+    <div class="col-lg-1 my-auto col-simulator">
+      <i class="fa fa-caret-right caret-simulator" aria-hidden="true"></i>
+    </div>
+
+    <div class="col-lg-6 tex my-auto col-name-simulator">
+      <h5 *ngIf="metricType == 'bySupervisor'"></h5>
+      <h5 *ngIf="metricType == 'byUser'"></h5>
+      <h5 *ngIf="metricType == 'byCompany'"></h5>
+      <h5 *ngIf="metricType == 'byDate'"></h5>
+    </div>
+  </div>
+
+  <div *ngIf="show" class="row">
+    <div class="col-lg-12 my-auto">
+      <ng-container *ngIf="toggle == 'null'">
+        <div class="containerMessage w-100" style="min-height: 300px;">
+          <div class="row h-100 w-100">
+            <div class="col-lg-12 text-center my-auto">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h1 style="font-size: 15em;">
+                    <fa-icon class="noChartsIcon"></fa-icon>
+                  </h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <h3 class="noChartsIcon">
+                    No hay métricas asociadas a este usuario
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <app-bar-chart *ngIf="toggle == 'bar'" [barChartLabels]="chosenChart.barLabels"
+        [barChartData]="chosenChart.barSeries">
+      </app-bar-chart>
+      <app-doughnut-chart *ngIf="toggle == 'doughnut'" [doughnutChartData]="chosenChart.values"
+        [doughnutChartLabels]="chosenChart.labels">
+      </app-doughnut-chart>
+      <app-radar-chart *ngIf="toggle == 'radar'" [radarChartData]="chosenChart.radarChartData"
+        [radarChartLabels]="chosenChart.radarChartLabels"></app-radar-chart>
+      <app-pie-chart *ngIf="toggle == 'pie'" [pieChartData]="chosenChart.pieChartValues"
+        [pieChartLabels]="chosenChart.pieChartLabels">
+      </app-pie-chart>
+      <app-line-chart *ngIf="toggle == 'line'" [lineChartData]="chosenChart.lineChartData"
+        [lineChartLabels]="chosenChart.lineChartLabels">
+      </app-line-chart>
+      <app-check-chart *ngIf="toggle == 'check'" [checkData]="chosenChart">
+      </app-check-chart>
+      <app-summary-chart *ngIf="toggle == 'summary'" [checkData]="chosenChart">
+      </app-summary-chart>
+    </div>
+  </div>
+
+</div>

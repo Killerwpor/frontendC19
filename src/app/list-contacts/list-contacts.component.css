@@ -1,0 +1,52 @@
+.container-flex {
+  padding-top: 1em;
+  background-color: var(--spectra-dark-grey);
+  height: 100%;
+}
+
+.container-list{
+  overflow-x: auto;
+  max-height: 100%;
+  min-height: 100%;
+  z-index: 0;
+}
+
+.row-simulator .container-button {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.container-button .btn-spectra {
+  background-color: var(--spectra-light-grey);
+  padding-left: 3em;
+  width: 100%;
+  border: 0px;
+  border-radius: 2em;
+}
+
+.container-button .btn-spectra p {
+  margin: 0;
+}
+
+.container-button .btn-spectra:hover {
+  background-color: var(--spectra-green);
+}
+
+.image--cover {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center right;
+  object-position: center right;
+  border: 2px solid;
+  border-color: white;
+  z-index: 1;
+}
+
+.dark-bg{
+  background-color: var(--spectra-dark-grey);
+}

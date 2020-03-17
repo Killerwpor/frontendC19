@@ -1,0 +1,140 @@
+<nav class="navbar navbar-expand-lg">
+  <!-- <button
+    class="navbar-toggler hidden-sm-up"
+    type="button"
+    (click)="isNavbarCollapsed = !isNavbarCollapsed"
+    data-target="#navbarsDefault"
+    aria-controls="navbarsDefault"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    style="background-color: var(--spectra-green); border: 2px solid; color: white;"
+  >
+    <span class="navbar-toggler-icon">
+      <i class="fa fa-bars" aria-hidden="true"></i
+    ></span>
+  </button>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    (click)="toggle()"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    style="background-color: var(--spectra-green); border: 2px solid; color: white;"
+  >
+    <span class="navbar-toggler-icon"
+      ><i class="fa fa-user" aria-hidden="true"></i
+    ></span>
+  </button> -->
+
+  <div
+    class="collapse navbar-collapse"
+    id="navbarsDefault"
+  >
+    <div class="row row-all">
+      <div class="col-lg-10 col-logo">
+        <div class="row mx-auto my-auto">
+          <div class="col my-auto">
+            <h5 class="tex">Simuladores | Clientes</h5>
+          </div>
+          <div class="col">
+            <a class="navbar-brand" href="#">
+              <img
+                src="assets/img/UI_spectraAPP_LOGO_SPECTRA.png"
+                width="130"
+                height="30"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-lg-4 col-search">
+        <div class="row row-search">
+          <div class="col-lg-12 my-auto text-center">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                aria-describedby="basic-addon1"
+                style="background-color: var(--spectra-grey);"
+              />
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-lg-2 col-dropdown" style="background-color: var(--spectra-light-grey);">
+        <div class="row">
+          <div class="col-lg-12">
+            <div ngbDropdown class="dropdown-nav d-inline-block">
+              <button
+                class="btn btn-outline-primary btn-dropdown"
+                id="dropdownBasic1"
+                ngbDropdownToggle
+              >
+                <p class="text-center my-auto tex">
+                  {{companyName}}
+                </p>
+              </button>
+              <div
+                ngbDropdownMenu
+                class="dropdown-btns"
+                aria-labelledby="dropdownBasic1"
+              >
+                <button ngbDropdownItem routerLink="./bar-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                      Informacion
+                    </p>
+                  </div>
+                </button>
+                <button ngbDropdownItem routerLink="../">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar
+                      Sesion
+                    </p>
+                  </div>
+                </button>
+                <button ngbDropdownItem routerLink="./radar-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      Perfil
+                    </p>
+                  </div>
+                </button>
+                <button ngbDropdownItem routerLink="./pie-chart">
+                  <div class="padding">
+                    <p class="text-center my-auto tex">
+                      <i class="fa fa-cog" aria-hidden="true"></i>
+                      Configuracion
+                    </p>
+                  </div>
+                </button>
+                <div class="filler"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- <ng-sidebar-container style="position: absolute; height: 94.4vh;">
+  <ng-sidebar showBackdrop="true" [(opened)]="_opened" style="z-index: 1;">
+    <div
+      class="container h-100 p-0"
+      style="width: 20em; background-color: var(--spectra-grey);"
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+  </ng-sidebar>
+</ng-sidebar-container> -->

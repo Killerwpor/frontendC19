@@ -1,0 +1,94 @@
+<div class="mx-auto container-list p-5">
+  <div class="row h-100">
+    <!-- Col categorias -->
+    <div class="col-lg-4 p-0">
+      <div
+        class="nav flex-column nav-pills"
+        id="v-pills-tab"
+        role="tablist"
+        aria-orientation="vertical"
+      >
+        <ng-container *ngFor="let cat of checkData.categories; let i = index">
+          <a
+            *ngIf="i == 0"
+            class="nav-link active"
+            (click)="chooseCategory(cat)"
+            id="v-pills-home-tab"
+            data-toggle="pill"
+            href="#v-pills-home"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+            >{{ cat.categoryName }}
+          </a>
+          <a
+            *ngIf="i != 0"
+            class="nav-link"
+            (click)="chooseCategory(cat)"
+            id="v-pills-profile-tab"
+            data-toggle="pill"
+            href="#v-pills-profile"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+            >{{ cat.categoryName }}
+          </a>
+        </ng-container>
+      </div>
+    </div>
+    <!--Col ojectos-->
+    <div class="col-lg-8 p-0 col-checks">
+      <div class="row">
+        <!--Col objeto-->
+        <div class="col-9">
+          <div class="d-flex flex-column flex-nowrap bd-highlight mb-3">
+            <ng-container *ngFor="let obj of chosenCategory.objects">
+              <div class="container-object text-center">
+                <h6
+                  class="tex"
+                  *ngIf="obj.objectValue"
+                  style="color: var(--spectra-green);"
+                >
+                  {{ obj.objectName }}
+                </h6>
+                <h6
+                  class="tex"
+                  *ngIf="!obj.objectValue"
+                  style="color: grey;"
+                >
+                  {{ obj.objectName }}
+                </h6>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <!-- Col resultado -->
+        <div class="col-3">
+          <div class="d-flex flex-column flex-nowrap bd-highlight mb-3">
+            <ng-container *ngFor="let obj of chosenCategory.objects">
+              <div class="container-checkmark text-center">
+                <h3>
+                  <fa-icon
+                    *ngIf="obj.objectValue == 'True'"
+                    [icon]="faCheckCircle"
+                    style="color: var(--spectra-green);"
+                  ></fa-icon>
+                  <fa-icon
+                    *ngIf="obj.objectValue == 'False'"
+                    [icon]="faTimesCircle"
+                    style="color: grey;"
+                  ></fa-icon>
+                  <ng-container  *ngIf="obj.objectValue != 'False' && obj.objectValue != 'True' ">
+                    <div style="color: white; font-size: 22px;" >
+                      {{obj.objectValue}}
+                    </div>
+                  </ng-container>
+                </h3>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

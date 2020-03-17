@@ -1,0 +1,19 @@
+.col-brand {
+  max-height: 12.5em;
+}
+
+.spectra-link{
+    color: var(--spectra-green);
+}
+
+.brand {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+h6{
+  width: 40%;
+}
+h6:hover {
+  background-color: white;
+}

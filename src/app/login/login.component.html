@@ -1,0 +1,153 @@
+<div class="container-login w-100 h-100" style="min-height: 100vh;">
+  <div class="row p-0 m-0" style="height: 100vh;">
+    <div class="col-lg-12 my-auto text-center">
+      <img src="assets/img/UI_spectraAPP_LOGO_SPECTRA.png" alt="" />
+    </div>
+
+    <div class="col-lg-12 m-0 p-0 text-center">
+      <div class="row h-50 container-card">
+        <div class="col-lg-12 my-auto">
+          <div class="container">
+            <form>
+              <div class="row row-input">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 my-auto">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="fa fa-user" aria-hidden="true"></i
+                      ></span>
+                    </div>
+                    <input
+                      [(ngModel)]="inputUsername"
+                      name="inputUsername"
+                      type="email"
+                      class="form-control"
+                      placeholder="Usuario"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-3"></div>
+              </div>
+              <div class="row row-input">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 my-auto">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="fa fa-lock" aria-hidden="true"></i
+                      ></span>
+                    </div>
+                    <input
+                      [(ngModel)]="inputPass"
+                      name="inputPass"
+                      type="password"
+                      class="form-control"
+                      placeholder="Contraseña"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-3"></div>
+              </div>
+              <div class="row row-buttons">
+                <div class="col-lg-3 p-0"></div>
+                <div class="col-lg-6 p-0">
+                  <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-3 text-center">
+                      <button
+                        type="button"
+                        class="btn btn-skew"
+                        (click)="TryLogin()"
+                      >
+                        <h5>Entrar</h5>
+                      </button>
+                    </div>
+                    <div class="filler"></div>
+                    <div class="col-lg-3 text-center">
+                      <button
+                        type="button"
+                        class="btn btn-skew"
+                        data-toggle="modal"
+                        data-target="#exampleModalCenter"
+                      >
+                        <h5>Limpiar</h5>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 p-0"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-full" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true" style="color: white;">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row h-50">
+            <div class="col-lg-12 my-auto text-center">
+              <img src="assets/img/UI_spectraAPP_ico_warning_sign.png" alt="" />
+            </div>
+          </div>
+          <div class="row h-50">
+            <div class="row w-100 h-25">
+              <div class="col-lg-12 text-center">
+                <h4 class="modal-warning">
+                  Lorem Ipsum et anumi, silencium nagnumium...
+                </h4>
+              </div>
+            </div>
+            <div class="row w-100 h-50">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4 text-center my-auto">
+                <form>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Usuario"
+                  />
+                </form>
+              </div>
+              <div class="col-lg-4"></div>
+            </div>
+            <div class="row w-100 h-25">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4 text-right">
+                <button type="button" class="btn btn-skew-inv">
+                  <h5>Enviar</h5>
+                </button>
+              </div>
+              <div class="col-lg-4"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dejar router outlet para poder cambiar la pagina -->
+<router-outlet></router-outlet>

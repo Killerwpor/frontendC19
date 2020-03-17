@@ -1,0 +1,68 @@
+<div class="dark-bg">
+
+  <!-- Radio Button -->
+  <ng-container *ngIf="typeUser == 'admin'">
+    <div class="w-100 pl-5">
+      <label class="radio" (click)="changeTab('users');">
+        <input type="radio" name="r" value="4" checked>
+        <span class="tex">Usuarios</span>
+      </label>
+      <label class="radio" (click)="changeTab('supervisors');">
+        <input type="radio" name="r" value="4">
+        <span class="tex">Supervisores</span>
+      </label>
+    </div>
+  </ng-container>
+  <!-- End Radio Buttons -->
+
+
+  <!-- Users -->
+  <ng-container *ngIf="toggle == 'users'">
+    <div class="container container-list">
+      <div class="row row-simulator" *ngFor="let contact of contacts | filter: filterContact">
+        <div class="col-lg-12" (click)="selectContact(contact)">
+          <div class="container-button">
+            <img src={{contact.photoUrl}} class="image--cover" style="background-color: var(--spectra-green);" />
+            <button type="button" class="btn btn-primary btn-spectra waves-effect">
+              <div class="row">
+                <div class="col-lg-12">
+                  <p class="tex-bold text-truncate">{{contact.name}}</p>
+                </div>
+                <div class="col-lg-12">
+                  <p class="tex text-truncate">{{contact.documentNumber}}</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <!-- End Users -->
+
+  <!-- Supervisors -->
+  <ng-container *ngIf="toggle == 'supervisors'">
+    <div class="container container-list">
+      <div class="row row-simulator" *ngFor="let contact of supervisors | filter: filterContact">
+        <div class="col-lg-12" (click)="selectContact(contact)">
+          <div class="container-button">
+            <img src={{contact.photoUrl}} class="image--cover" style="background-color: var(--spectra-green);" />
+            <button type="button" class="btn btn-primary btn-spectra waves-effect">
+              <div class="row">
+                <div class="col-lg-12">
+                  <p class="tex-bold text-truncate">{{contact.name}}</p>
+                </div>
+                <div class="col-lg-12">
+                  <p class="tex text-truncate">{{contact.phone}}</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <!-- End supervisors -->
+
+
+</div>

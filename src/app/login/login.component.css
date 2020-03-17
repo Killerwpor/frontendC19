@@ -1,0 +1,117 @@
+.container-login {
+  background-color: var(--spectra-grey);
+}
+
+.container-login img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container-logo {
+  min-height: 10em;
+}
+
+.container-card {
+  background-image: url("src/assets/img/UI_spectraAPP_login_bg.png");
+  max-width: 100%;
+  min-height: 25em;
+  height: auto;
+  box-shadow: 0em 0.5em 0.5em 0em rgba(0, 0, 0, 0.15);
+}
+
+.container-card .row-input {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.container-card form input {
+  background-color: var(--spectra-dark-grey);
+  border: 2px solid;
+  height: 3em;
+  color: var(--spectra-green);
+  font-family: "tex";
+}
+
+.container-card .input-group-text {
+  background-color: var(--spectra-green);
+  color: white;
+  border: 0px;
+  font-size: 2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.btn-skew {
+  font-family: "tex";
+  transform: skew(-21deg);
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 2em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 1.5em;
+  max-height: 3em;
+  min-width: 7em;
+  background-color: var(--spectra-grey);
+  color: white;
+}
+
+.btn-skew:hover {
+  background-color: var(--spectra-green);
+}
+
+.btn-skew h5 {
+  transform: skew(21deg);
+}
+
+.btn-skew-inv {
+  font-family: "tex";
+  transform: skew(-21deg);
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 2em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 1.5em;
+  max-height: 3em;
+  min-width: 7em;
+  background-color: var(--spectra-green);
+  color: white;
+}
+
+.btn-skew-inv h5{
+    transform: skew(21deg);
+}
+
+.modal-full {
+  min-width: 100%;
+  margin: 0;
+}
+
+.modal-header, .modal-footer {
+  border: 0px solid;
+}
+
+.modal-content {
+  height: auto;
+  border-radius: 0;
+  min-height: 37em;
+  background-color: var(--spectra-grey);
+}
+
+.modal-content .modal-warning {
+  color: white;
+  font-family: "tex";
+}
+
+.modal-content form input {
+  height: 3em;
+  background-color: var(--spectra-dark-grey);
+  border-color: var(--spectra-green);
+  border: 2px solid;
+  color: var(--spectra-green);
+  font-family: "tex";
+}
+
+@media only screen and (max-width: 1000px) {
+  .filler {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+  }
+}

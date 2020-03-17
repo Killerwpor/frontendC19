@@ -1,0 +1,72 @@
+<div class="container p-0">
+  <div class="row">
+    <div class="col-lg-12 ">
+      <div class="wrapper">
+        <div class="row">
+          <div class="col-lg-12 p-0">
+            <div class="profile-picture">
+              <img [src]="chosen.photoUrl | safeHtml"
+                class="image--cover">
+              <!-- <a class="mc-btn-action">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+              </a> -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-details">
+          <div class="row row-name">
+            <div class="col-lg-12">
+              <h3 class="profile-name tex">{{chosen.name}}<button class="btn"  (click)="openEditForm()">
+                <h6 class="detail-title tex" >
+                  Editar/eliminar usuario
+                  <i class="fa fa-edit"></i>
+                </h6>
+              </button></h3>
+            </div>
+            
+            
+          </div>
+          <div class="row row-name">
+         
+          </div>
+        </div>        
+
+        <div class="expanded-details">
+          <div class="row row-odd">
+            <div class="col-lg-3 text-left">
+              <h5 class="detail-title tex">Correo</h5>
+            </div>
+            <div class="col-lg-9 text-left">
+              <h5 class="detail-detail tex">{{chosen.mail}}</h5>
+            </div>
+          </div>
+          <div class="row row-even">
+            <div class="col-lg-3 text-left">
+              <h5 class="detail-title tex">Celular</h5>
+            </div>
+            <div class="col-lg-9 text-left">
+              <h5 class="detail-detail tex">{{chosen.phone}}</h5>
+            </div>
+          </div>
+          <div class="row row-odd">
+            <div class="col-lg-3 text-left">
+              <h5 class="detail-title tex">Tipo documento</h5>
+            </div>
+            <div class="col-lg-9 text-left">
+              <h5 class="detail-detail tex">{{chosen.documentType}}</h5>
+            </div>
+          </div>
+          <div class="row row-even">
+            <div class="col-lg-3 text-left">
+              <h5 class="detail-title tex">Número documento</h5>
+            </div>
+            <div class="col-lg-9 text-left">
+              <h5 class="detail-detail tex">{{chosen.documentNumber}}</h5>
+            </div>
+          </div>
+        </div>
+       
+    </div>
+  </div>
+</div>

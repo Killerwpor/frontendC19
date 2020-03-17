@@ -1,0 +1,174 @@
+<!-- Page Wrapper -->
+<div id="wrapper" style="background-color: var(--spectra-grey);">
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-light-grey sidebar sidebar-dark accordion" id="accordionSidebar"
+    style="z-index: 1;">
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand-text mx-3 tex">
+        <img src="assets/img/UI_spectraAPP_LOGO_SPECTRA.png" width="170" height="40" alt="" />
+      </div>
+    </a>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" aria-expanded="true" (click)="collapseNavLink('simulators')">
+        <span class="tex">Simuladores</span>
+      </a>
+      <div id="collapseSim" #collapseSim class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="collapse-inner rounded">
+          <app-list-simulators [simulators]="simulatorList" (simulatorInfo)="changeSimulator($event)">
+          </app-list-simulators>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" aria-expanded="true" (click)="collapseNavLink('users')">
+        <span class="tex">Agregar / Buscar Usuarios</span>
+      </a>
+      <div id="collapseUsers" #collapseUsers class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="collapse-inner rounded">
+          <app-global-contact-search (userFilter)="filterContact($event)" (editUser)="editUser($event)" (addUser)="addUser()" (emitOpenSidebar)="openUserSidebar('global')"></app-global-contact-search>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" style="background-color: var(--spectra-green);">
+      <a class="nav-link collapsed" (click)="collapseNavLink('menu')">
+        <span class="tex">Administrar</span>
+      </a>
+      <div id="collapseMenu" #collapseMenu class="collapse" aria-labelledby="headingTwo"
+        data-parent="#accordionSidebar">
+        <div class="collapse-inner rounded">
+          <app-menu-user (addCompany)="addCompany()"></app-menu-user>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Sidebar User-->
+  <ul class="d-none navbar-nav bg-gradient-dark-grey sidebar sidebar-dark accordion" #userSidebar>
+    <!-- Sidebar - Brand -->
+    <ng-container *ngIf="sidebarToggle == 'local'">
+      <app-contact-search (addUser)="addUser()" (userFilter)="filterContact($event)"></app-contact-search>
+      <app-list-contacts [contacts]="selectedSimulator.contacts" [supervisors]="selectedSimulator.supervisors"
+        [typeUser]="typeUser" (chooseContact)="changeContact($event)" [filterContact]="filteredContact">
+      </app-list-contacts>
+    </ng-container>
+    
+
+    <ng-container *ngIf="sidebarToggle == 'global'">
+      <app-global-list-contacts (chooseContact)="changeContact($event)" (chooseSimulator)='changeSimulatorByIndex($event)'  [filterContact]="filteredContact" [simulators]='simulatorList'></app-global-list-contacts>
+    </ng-container>
+    
+  </ul>
+  <!-- End of Sidebar users -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Dashboard container -->
+      <ng-container *ngIf="toggle == 'dash'">
+        <!-- Begin Page Content -->
+        <div class="container-fluid h-100">
+          <div class="row w-100 h-100 m-0 p-0">
+            <div class="col-lg-5">
+              <div class="row">
+                <div class="col-lg-12 h-60">
+                  <app-contact-panel  (editUser)="editUser($event)" [chosen]="selectedContact">
+                  </app-contact-panel>
+                </div>
+                <div class="col-lg-12 p-0 my-auto">
+                  <app-message-panel (changeMetric)="changeMetricToggle($event)" (emitMetric)="sendInfoToCharts($event)"
+                    (emitDate)="sendDateToCharts($event)" [userType]="selectedContact.type">
+                  </app-message-panel>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 my-auto">
+              <app-chart-panel (emitMetrics)="asignNewMetricList($event)"  [id]="selectedContact.mail"
+                [simulator]="selectedSimulator.name" [chosen]="selectedContact" [company]="userCompany" [userType]="selectedContact.type">
+              </app-chart-panel>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <!-- End of dashboard container -->
+
+      <!--Add form container-->
+      <ng-container *ngIf="toggle == 'add'">
+        <div class="row w-100 m-3">
+          <div class="col-lg-12 mx-auto p-0">
+            <app-form-add (close)="addUser()" [simulatorList]="simulatorList"></app-form-add>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="toggle == 'edit'">
+        <div class="row w-100 m-3">
+          <div class="col-lg-12 mx-auto p-0">
+            <app-edit-form  (close)="editUser($event)" [chosen]="selectedContact"></app-edit-form>
+          </div>
+        </div>
+      </ng-container>
+      <!--End of add form container-->
+
+        <!--Add company container-->
+        <ng-container *ngIf="toggle =='addCompany'">
+          <div class="row w-100 m-3">
+            <div class="col-lg-12 mx-auto p-0">
+              <app-company-form (close)="addCompany()" [simulatorList]="simulatorListTotal"></app-company-form>
+            </div>
+          </div>
+        </ng-container>
+        <!--End of add form container-->
+
+  <div><h1 class="companySelectedText"><b>{{companySelected}}</b></h1></div>
+          
+
+
+      <!-- Not Selected container -->
+      <ng-container *ngIf="toggle == 'notSelected'">
+        <div class="row w-90 h-95 m-3">
+          <div class="col mx-auto my-auto p-0" style="position: relative;">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h1>
+                  <fa-icon *ngIf="selectedSimulator.icon == 'star'" class="noUserIcon" [icon]="faStarOfLife"></fa-icon>
+                  <fa-icon *ngIf="selectedSimulator.icon == 'building'" class="noUserIcon" [icon]="faBuilding">
+                  </fa-icon>
+                </h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h1 class="noUserText">
+                  Seleccione uno de los usuarios para visualizar métricas
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+ 
+
+      <!-- End of Not selected container -->
+
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->

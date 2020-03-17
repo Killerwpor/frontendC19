@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 p-0">
+      <div
+        class="row h-100 w-100"
+        style="position: absolute; text-align: center;"
+      >
+        <div class="col-lg-12 my-auto">
+          <h4 class="tex">{{chosenProgress.values[0][0]}}%</h4>
+        </div>
+      </div>
+      <app-doughnut-chart
+        [doughnutChartData]="chosenProgress.values"
+        [doughnutChartLabels]="chosenProgress.labels"
+      >
+      </app-doughnut-chart>
+    </div>
+    <div class="col-lg-3">
+      <div class="row h-25" (click)="changeProgress(0)">
+        <div class="col-lg-12 p-0 my-auto">
+          <p class="tex m-0 development">Programacion</p>
+        </div>
+      </div>
+      <div class="row h-25" (click)="changeProgress(1)">
+        <div class="col-lg-12 p-0 my-auto">
+          <p class="tex m-0 art">Arte</p>
+        </div>
+      </div>
+      <div class="row h-25" (click)="changeProgress(2)">
+        <div class="col-lg-12 p-0 my-auto">
+          <p class="tex m-0 sound">Sonido</p>
+        </div>
+      </div>
+      <div class="row h-25">
+        <div class="col-lg-12 p-0 my-auto">
+          <p class="tex m-0 sound">...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

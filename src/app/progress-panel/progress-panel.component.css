@@ -1,0 +1,15 @@
+.tex:hover {
+  cursor: pointer;
+}
+
+.development:hover {
+  color: #40b987;
+}
+
+.art:hover {
+  color: rgba(0, 229, 255, 1);
+}
+
+.sound:hover {
+  color: rgba(255, 82, 82, 1);
+}

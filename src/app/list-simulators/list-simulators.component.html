@@ -1,0 +1,23 @@
+<div class="container-flex">
+  <div class="container" *ngFor="let simulator of simulators">
+    <div class="row row-simulator" (click)="chooseSimulator(simulator)">
+      <div class="col-lg-12 p-0">
+        <div class="container-button">
+          <div class="image--cover text-center">
+            <div class="row h-100 w-100">
+              <div class="col-lg-12 my-auto" style="left: 12.5px;">
+                <fa-icon *ngIf="simulator.icon.includes('star')" [icon]="faStarOfLife"></fa-icon>
+                <fa-icon *ngIf="simulator.icon.includes('building')" [icon]="faBuilding"></fa-icon>
+                <fa-icon *ngIf="simulator.icon.includes('fire-extinguisher')" [icon]="faFireExtinguisher"></fa-icon>
+                
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-spectra pl-5">
+            <p class="tex">{{ simulator.name }}</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

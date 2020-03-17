@@ -1,0 +1,104 @@
+.caret-simulator {
+  color: var(--spectra-green);
+  font-size: 3em;
+}
+
+.btn-dropdown-spectra {
+  background-color: var(--spectra-green);
+  border: 2px solid white;
+  color: white;
+  border-radius: 3em;
+  font-family: 'tex';
+}
+
+.btn-dropdown-spectra:hover {
+  color: #fff;
+  background-color: var(--spectra-green);
+  border-color: var(--spectra-green);
+}
+
+.dropdown-menu {
+  background-color: var(--spectra-dark-grey);
+  border: 2px solid var(--spectra-green);
+}
+
+.dropdown-item {
+  color: var(--spectra-green);
+  font-family: 'tex';
+}
+
+.dropdown-item:hover {
+  background-color: var(--spectra-light-grey);
+}
+
+.image--cover {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin: 20px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center right;
+  object-position: center right;
+  border: 2px solid;
+  border-color: white;
+  background-color: var(--spectra-green);
+}
+
+.image--cover fa-icon {
+  color: white;
+  font-size: 1em;
+}
+
+.col-simulator {
+  padding: 0;
+}
+
+.col-name-simulator {
+  padding-left: 1.5em;
+}
+
+.noChartsIcon {
+  font-family: 'tex';
+  color: var(--spectra-green);
+  opacity: 0.3;
+}
+
+.spectra-form-control {
+  height: 3em;
+  border: 2px solid var(--spectra-green);
+  background-color: var(--spectra-dark-grey);
+  color: var(--spectra-green);
+  font-family: 'tex';
+}
+
+/* .e-calendar,
+.e-bigger.e-small .e-calendar {
+  background-color: var(--spectra-dark-grey);
+  border: 2px solid var(--spectra-green);
+  box-shadow: #e0e0e0;
+}
+
+.e-calendar .e-header .e-title,
+.e-bigger.e-small .e-calendar .e-header .e-title {
+  color: var(--spectra-green);
+}
+
+.e-calendar .e-header .e-next span,
+.e-calendar .e-header .e-prev span,
+.e-bigger.e-small .e-calendar .e-header .e-next span,
+.e-bigger.e-small .e-calendar .e-header .e-prev span {
+  font-weight: normal;
+  color: var(--spectra-green);
+}
+
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day,
+.e-calendar .e-content td.e-selected:hover span.e-day,
+.e-calendar .e-content td.e-selected.e-focused-date span.e-day,
+.e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day,
+.e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day,
+.e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+  background-color: Var(--spectra-green);
+  color:
+    white;
+} */
